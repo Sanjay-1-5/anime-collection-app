@@ -1,0 +1,21 @@
+{
+  "name": "AnimeVerse",
+  "short_name": "AnimeVerse",
+  "description": "Manage your anime collection",
+  "start_url": "/anime-collection-app/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#ff4757",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@mdi/svg@6.9.96/svg/movie-open.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@mdi/svg@6.9.96/svg/movie-open.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

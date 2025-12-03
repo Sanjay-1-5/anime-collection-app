@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeVerse - Collection Manager</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#ff4757">
+    <meta name="description" content="Track your anime movies and manga collection">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎌</text></svg>">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Your Anime App HTML Here -->
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-ghost"></i> AnimeVerse</h1>
+            <p>Your anime collection manager</p>
+        </header>
+        
+        <main class="app-main">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="movies">Movies</button>
+                <button class="tab" data-tab="manga">Manga</button>
+                <button class="tab" data-tab="add">Add New</button>
+            </div>
+            
+            <!-- Movies Tab -->
+            <div class="tab-content active" id="movies">
+                <h2><i class="fas fa-film"></i> My Anime Movies</h2>
+                <div class="movies-list" id="moviesList">
+                    <!-- Movies will appear here -->
+                </div>
+            </div>
+            
+            <!-- Manga Tab -->
+            <div class="tab-content" id="manga">
+                <h2><i class="fas fa-book"></i> My Manga Collection</h2>
+                <div class="manga-list" id="mangaList">
+                    <!-- Manga will appear here -->
+                </div>
+            </div>
+            
+            <!-- Add Tab -->
+            <div class="tab-content" id="add">
+                <h2><i class="fas fa-plus-circle"></i> Add New Item</h2>
+                <form class="add-form" id="addForm">
+                    <select id="itemType">
+                        <option value="movie">Movie</option>
+                        <option value="manga">Manga</option>
+                    </select>
+                    
+                    <input type="text" id="title" placeholder="Title" required>
+                    <input type="number" id="price" placeholder="Price ($)" step="0.01">
+                    <textarea id="notes" placeholder="Notes"></textarea>
+                    
+                    <button type="submit" class="btn-add">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </form>
+            </div>
+        </main>
+        
+        <footer class="app-footer">
+            <p>Total Collection: <span id="totalValue">$0</span></p>
+        </footer>
+    </div>
+    
+    <!-- Link to JavaScript -->
+    <script src="app.js"></script>
+    
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+        
+        // PWA Install Prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            setTimeout(() => {
+                if(confirm("Install AnimeVerse as an app?")) {
+                    e.prompt();
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

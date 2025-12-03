@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.app-header {
+    background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.app-header p {
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.tabs {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    background: rgba(255, 71, 87, 0.3);
+    font-weight: bold;
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+    min-height: 300px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-form select,
+.add-form input,
+.add-form textarea {
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.add-form input::placeholder,
+.add-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-add {
+    padding: 15px;
+    background: linear-gradient(135deg, #2ed573 0%, #1dd1a1 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+}
+
+.app-footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+}
+
+#totalValue {
+    color: #2ed573;
+    font-weight: bold;
+}
+
+/* Movie and Manga Items */
+.movies-list,
+.manga-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movie-item,
+.manga-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.item-price {
+    color: #2ed573;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .app-header h1 {
+        font-size: 2rem;
+    }
+}
